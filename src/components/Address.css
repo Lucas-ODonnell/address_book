@@ -1,0 +1,131 @@
+.container {
+	display: flex;
+	justify-content: center;
+	height: 90vh;
+}
+
+.content {
+	padding: 3em 5em;
+	width: 95%;
+	max-width: 70rem;
+	box-shadow: 0 2px 5px rgb(0,0,0);
+	border-radius: 4px;
+	background-color: white;
+}
+
+.new-address {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: 3em;
+	cursor: pointer;
+	color: var(--backgroundColor);
+	margin-top: 1em;
+}
+
+.new-address button {
+	background-color: black;
+	color: white;
+	border: 1px solid black;
+	border-radius: 4px;
+	padding: .3em .4em;
+}
+
+.new-address button:hover {
+	color: black;
+	background-color: white;
+}
+
+.new-address-icon {
+	font-size: 1.5rem;
+	margin-right: .5em;
+	color: var(--backgroundColor);
+}
+
+.address-form-container {
+	position: absolute;
+	z-index: 999;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.address-form-content {
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+}
+
+.address-form {
+	padding: 3em 5em;
+}
+
+.form-header {
+	display: flex;
+	justify-content: flex-end;
+	background-color: var(--backgroundColor);
+	padding: 2em 3em;
+}
+
+.form-header div {
+	cursor: pointer;
+	font-size: 2.5rem;
+	font-weight: bold;
+}
+
+.field {
+	margin-bottom: 3em;
+}
+
+.address-form label {
+	font-weight: bold;
+}
+
+.address-form input {
+	width: 90%;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid var(--backgroundColor);
+	font-size: 2rem;
+}
+
+.form-submit {
+	display: flex;
+	justify-content: center;
+	margin-top: 3em;
+}
+
+.address-form button {
+	padding: .5em 1em;
+	font-size: 2rem;
+	font-weight: bold;
+	width: 100%;
+	background-color: var(--buttonColor);
+	color: white;
+	border: 1px solid var(--buttonColor);
+	border-radius: 4px;
+}
+
+.address-form button:hover {
+	background-color: white;
+	color: var(--buttonColor);
+}
+
+.contact-row {
+	display: flex;
+	justify-content: space-between;
+}
+
+.index-container {
+	display: flex;
+	justify-content: center;
+	margin-top: 2em;
+}
+
+.index-content {
+	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	width: 100%;
+	max-width: 40rem;
+	height: 60vh;
+	border-radius: 4px;
+}
