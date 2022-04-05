@@ -12,6 +12,7 @@
 	box-shadow: 0 2px 5px rgb(0,0,0);
 	border-radius: 4px;
 	background-color: white;
+	overflow: auto;
 }
 
 /* AddressForm */
@@ -114,16 +115,29 @@
 	justify-content: space-between;
 }
 /* AddressIndex */
-.index-container {
-	display: flex;
+.address-grid {
+	margin-top: 1em;
+	display: grid;
 	justify-content: center;
-	margin-top: 2em;
+	grid-template-columns: repeat(auto-fit, 19rem);
+	gap: .1em;
 }
 
-.index-content {
+.each-address {
+	display: flex;
+	flex-direction: column;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-	width: 100%;
-	max-width: 40rem;
-	height: 60vh;
 	border-radius: 4px;
+	padding: 1em 2em;
+	color: white;
+	background-color: var(--backgroundColor);
 }
+
+.each-address div {
+	margin-bottom: .3em;
+}
+
+
+
+
+

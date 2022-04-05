@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AddressInfo } from '../CustomTypes';
 import AddressForm from './AddressForm';
 import AddressIndex from './AddressIndex';
@@ -12,7 +12,14 @@ const Address: React.FC = () => {
 		phone: '',
 		notes: ''
 	})
-	const [addresses, setAddresses] = useState<AddressInfo[]>([])
+	const [addresses, setAddresses] = useState<AddressInfo[]>(()=>{
+		const data = localStorage.getItem("addresses");
+		return data ? JSON.parse(data) : [];
+	})
+
+	useEffect(()=> {
+		localStorage.setItem('addresses', JSON.stringify(addresses));
+			},[addresses])
 
 	const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
 		e.preventDefault();
@@ -22,12 +29,21 @@ const Address: React.FC = () => {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		setAddresses([...addresses, addressForm])
+		setAddressForm({
+			name: '',
+			address: '',
+			email: '',
+			phone: '',
+			notes: ''
+		})
+		localStorage.setItem('addresses', JSON.stringify(addresses));
 	}
+
 	return (
 		<div className="container">
 			<div className="content">
 				<AddressForm {...{handleChange, addressForm, handleSubmit}}/>
-				<AddressIndex />
+				<AddressIndex {...{addresses}}/>
 			</div>
 		</div>
 	)
