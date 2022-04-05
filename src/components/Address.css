@@ -1,3 +1,4 @@
+/* Address */
 .container {
 	display: flex;
 	justify-content: center;
@@ -13,6 +14,7 @@
 	background-color: white;
 }
 
+/* AddressForm */
 .new-address {
 	display: flex;
 	justify-content: center;
@@ -36,12 +38,7 @@
 	background-color: white;
 }
 
-.new-address-icon {
-	font-size: 1.5rem;
-	margin-right: .5em;
-	color: var(--backgroundColor);
-}
-
+/* CreateAddress */
 .address-form-container {
 	position: absolute;
 	z-index: 999;
@@ -63,7 +60,7 @@
 .form-header {
 	display: flex;
 	justify-content: flex-end;
-	background-color: var(--backgroundColor);
+	background-color: black;
 	padding: 2em 3em;
 }
 
@@ -71,6 +68,7 @@
 	cursor: pointer;
 	font-size: 2.5rem;
 	font-weight: bold;
+	color: white;
 }
 
 .field {
@@ -115,7 +113,7 @@
 	display: flex;
 	justify-content: space-between;
 }
-
+/* AddressIndex */
 .index-container {
 	display: flex;
 	justify-content: center;
