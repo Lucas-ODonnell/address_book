@@ -24,7 +24,6 @@ const Address: React.FC = () => {
 
 	useEffect(()=> {
 		localStorage.setItem('addresses', JSON.stringify(addresses));
-		console.log(addresses)
 	},[addresses,])
 
 	const handleChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -48,15 +47,24 @@ const Address: React.FC = () => {
 		} else {
 			let updatedAddresses = addresses.map(address => {
 				if (address.id === id) {
-					address.name = addressForm.name
-					address.address = addressForm.address
-					address.email = addressForm.email
-					address.phone = addressForm.phone
-					address.notes = addressForm.notes
+					address.name = addressForm.name === "" ? address.name : addressForm.name
+					address.address = addressForm.address === "" ? address.address : addressForm.address
+					address.email = addressForm.email === "" ? address.email : addressForm.email
+					address.phone = addressForm.phone === "" ? address.phone : addressForm.phone
+					address.notes = addressForm.notes === "" ? address.notes : addressForm.notes
 				} 
 				return address
 			})
 			setAddresses(updatedAddresses)
+			setId("");
+			setAddressForm({
+				id: '',
+				name: '',
+				address: '',
+				email: '',
+				phone: '',
+				notes: ''
+			})
 		}
 	}
 

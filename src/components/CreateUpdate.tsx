@@ -17,7 +17,7 @@ const CreateUpdate: React.FC<Props> = ({setShowForm, addressForm, handleChange, 
 					<div className="form-header">
 						<div onClick={()=>setShowForm(false)}>&times;</div>
 					</div>
-					<form className="address-form" onSubmit={handleSubmit}>
+					<form className="address-form" onSubmit={(e)=>{setShowForm(false); handleSubmit(e)}}>
 						<div className="field">
 							<label>Name </label>
 							<input 
