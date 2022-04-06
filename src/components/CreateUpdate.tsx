@@ -2,19 +2,20 @@ import React from 'react';
 import { AddressInfo } from '../CustomTypes';
 
 interface Props {
-	setShowAddressForm: React.Dispatch<React.SetStateAction<boolean>>;
+	setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
 	handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
 	handleSubmit: (e: React.FormEvent) => void;
 	addressForm: AddressInfo;
+	buttonName: string;
 }
 
-const CreateAddress: React.FC<Props> = ({setShowAddressForm, addressForm, handleChange, handleSubmit}) => {
+const CreateUpdate: React.FC<Props> = ({setShowForm, addressForm, handleChange, handleSubmit, buttonName}) => {
 	return (
 		<section>
 			<div className="address-form-container">
 				<div className="address-form-content">
 					<div className="form-header">
-						<div onClick={()=>setShowAddressForm(false)}>&times;</div>
+						<div onClick={()=>setShowForm(false)}>&times;</div>
 					</div>
 					<form className="address-form" onSubmit={handleSubmit}>
 						<div className="field">
@@ -65,7 +66,7 @@ const CreateAddress: React.FC<Props> = ({setShowAddressForm, addressForm, handle
 								/>
 						</div>
 						<div className="form-submit">
-							<button>Create</button>
+							<button>{buttonName}</button>
 						</div>
 					</form>
 				</div>
@@ -74,4 +75,4 @@ const CreateAddress: React.FC<Props> = ({setShowAddressForm, addressForm, handle
 	)
 }
 
-export default CreateAddress;
+export default CreateUpdate;
