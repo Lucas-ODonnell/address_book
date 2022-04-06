@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { AddressInfo } from '../CustomTypes';
 import CreateUpdate from './CreateUpdate';
 import Dropdown from './Dropdown';
+import Filter from './Filter';
 
 interface Props {
 	addresses: AddressInfo[];
@@ -17,7 +18,13 @@ interface Props {
 }
 
 const AddressIndex: React.FC<Props> = ({addresses, handleDelete, showForm, setShowForm, addressForm, handleChange, handleSubmit, setId, buttonName, setButtonName}) => {
-	const [sortBy, setSortBy] = useState<string>("name")
+	const [sortBy, setSortBy] = useState<string>("name");
+	const [filter, setFilter] = useState<string>("");
+
+	const handleFilterChange = (e: React.FormEvent<HTMLInputElement>) => {
+		e.preventDefault();
+		setFilter(e.currentTarget.value);
+	}
 
 	const sortList = () => {
 		if (sortBy.toLowerCase() === "name") {
@@ -26,7 +33,16 @@ const AddressIndex: React.FC<Props> = ({addresses, handleDelete, showForm, setSh
 		return addresses.sort((a, b) => a.email.localeCompare(b.email))
 	}
 
-	const addressList = sortList()
+	const addressList = sortList().filter((item) => {
+		if (filter === "") {
+			return item;
+		} else if (item.name.toLowerCase().includes(filter.toLowerCase()) || 
+			item.email.toLowerCase().includes(filter.toLowerCase()) || 
+			item.phone.toLowerCase().includes(filter.toLowerCase()))
+		{
+			return item;
+		}
+	})
 	.map((thisAddress, index)=> {
 		const { id, name, address, email, phone, notes } = thisAddress
 		return (
@@ -53,7 +69,7 @@ const AddressIndex: React.FC<Props> = ({addresses, handleDelete, showForm, setSh
 	})
 	return (
 		<section>
-			<p>Search bar will go here</p>
+			<Filter {...{handleFilterChange, filter}}/>
 			<Dropdown {...{setSortBy}}/>
 			<div className="address-grid">
 				{addressList}	
