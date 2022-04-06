@@ -1,0 +1,28 @@
+.dropdown-wrapper {
+	margin-right: 20em;
+	cursor: pointer;
+}
+
+.dropdown-header {
+	font-weight: bold;
+	font-size: 1.5rem;
+	margin-bottom: -.5em;
+}
+
+.list {
+	position: absolute;
+	z-index: 99;
+	margin-top: .7em;
+}
+
+.list-item button {
+	width: 100%;
+	border: none;
+	font-size: 1.5rem;
+	color: white;
+	background-color: black;
+}
+
+.list-item button:focus {
+	background-color: #660000;
+}

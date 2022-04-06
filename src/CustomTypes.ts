@@ -7,4 +7,7 @@ export interface AddressInfo {
 	notes: string;
 }
 
-
+export interface ItemInfo {
+	id: number;
+	value: string;
+}

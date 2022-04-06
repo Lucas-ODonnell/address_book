@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { AddressInfo } from '../CustomTypes';
 import CreateUpdate from './CreateUpdate';
+import Dropdown from './Dropdown';
 
 interface Props {
 	addresses: AddressInfo[];
@@ -14,8 +15,19 @@ interface Props {
 	buttonName: string;
 	setButtonName: React.Dispatch<React.SetStateAction<string>>;
 }
+
 const AddressIndex: React.FC<Props> = ({addresses, handleDelete, showForm, setShowForm, addressForm, handleChange, handleSubmit, setId, buttonName, setButtonName}) => {
-	const addressList = addresses.map((thisAddress, index)=> {
+	const [sortBy, setSortBy] = useState<string>("name")
+
+	const sortList = () => {
+		if (sortBy.toLowerCase() === "name") {
+			return addresses.sort((a, b) => a.name.localeCompare(b.name))
+		}
+		return addresses.sort((a, b) => a.email.localeCompare(b.email))
+	}
+
+	const addressList = sortList()
+	.map((thisAddress, index)=> {
 		const { id, name, address, email, phone, notes } = thisAddress
 		return (
 			<div className="each-address" key={index}>
@@ -41,6 +53,8 @@ const AddressIndex: React.FC<Props> = ({addresses, handleDelete, showForm, setSh
 	})
 	return (
 		<section>
+			<p>Search bar will go here</p>
+			<Dropdown {...{setSortBy}}/>
 			<div className="address-grid">
 				{addressList}	
 			</div>
