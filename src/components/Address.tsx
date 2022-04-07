@@ -75,6 +75,9 @@ const Address: React.FC = () => {
 	return (
 		<div className="container">
 			<div className="content">
+				<div className="title-header">
+				<h1>Address Book</h1>
+				</div>
 				<AddressForm {...{handleChange, addressForm, handleSubmit, showForm, setShowForm, buttonName, setButtonName}}/>
 				<AddressIndex {...{addresses, handleDelete, setShowForm,showForm, addressForm, handleChange, handleSubmit, setId, buttonName, setButtonName}}/>
 			</div>

@@ -1,7 +1,9 @@
 /* Address */
 .container {
+	margin-top: 2em;
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	height: 90vh;
 	width: 100%;
 }
@@ -12,7 +14,21 @@
 	max-width: 70rem;
 	box-shadow: 0 2px 5px rgb(0,0,0);
 	border-radius: 4px;
-	background-color: white;
+	background-color: var(--mainBodyColor);
+}
+
+.title-header {
+	background-color: var(--backgroundColor);
+	display: flex;
+	justify-content: center;
+	padding: 1em 0 1em 0;
+	margin: 0 -5.1em 0 -5.1em;
+}
+
+.content h1 {
+	font-size: 2rem;
+	color: white;
+	font-weight: bold;
 }
 
 /* AddressForm */
@@ -20,18 +36,19 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-left: 3em;
 	cursor: pointer;
 	color: var(--backgroundColor);
 	margin-top: 1em;
 }
 
 .new-address button {
-	background-color: black;
-	color: white;
-	border: 1px solid black;
+	background-color: var(--buttonSecondary);
+	color: black;
+	border: 1px solid var(--buttonSecondary);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.9);
 	border-radius: 4px;
-	padding: .3em .4em;
+	padding: .5em .8em;
+	font-weight: bold;
 }
 
 .new-address button:hover {
@@ -51,7 +68,7 @@
 .address-form-content {
 	width: 100vw;
 	height: 100vh;
-	background-color: white;
+	background-color: var(--backgroundColor);
 }
 
 .address-form {
@@ -61,7 +78,7 @@
 .form-header {
 	display: flex;
 	justify-content: flex-end;
-	background-color: black;
+	background-color: var(--mainBodyColor);
 	padding: 2em 3em;
 }
 
@@ -78,14 +95,15 @@
 
 .address-form label {
 	font-weight: bold;
+	color: white;
 }
 
 .address-form input {
 	width: 90%;
 	background: transparent;
 	border: none;
-	border-bottom: 1px solid var(--backgroundColor);
-	color: var(--backgroundColor);
+	border-bottom: 1px solid white;
+	color: white;
 	font-size: 2rem;
 }
 
@@ -100,15 +118,15 @@
 	font-size: 2rem;
 	font-weight: bold;
 	width: 100%;
-	background-color: var(--buttonColor);
-	color: white;
-	border: 1px solid var(--buttonColor);
+	background-color: var(--buttonPrimary);
+	color: black;
+	border: 1px solid var(--buttonPrimary);
 	border-radius: 4px;
 }
 
 .address-form button:hover {
 	background-color: white;
-	color: var(--buttonColor);
+	color: var(--buttonPrimary);
 }
 
 .contact-row {
@@ -131,10 +149,11 @@
 .each-address {
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+	box-shadow: 0 2px 5px rgba(0,0,0,0.9);
 	border-radius: 4px;
-	padding: 2em 3em;
+	padding: 1em 2em;
 	color: white;
+	font-size: 1.3rem;
 	background-color: var(--backgroundColor);
 }
 
@@ -146,14 +165,15 @@
 .header button {
 	margin-right: .4em;
 	cursor: pointer;
-	background-color: var(--buttonColor);
-	border: 1px solid var(--buttonColor);
+	background-color: var(--buttonPrimary);
+	border: 1px solid var(--buttonPrimary);
 	border-radius: 4px;
-	color: white;
+	color: black;
+	font-weight: bold;
 }
 
 .header button:hover {
-	color: black;
+	color: white;
 }
 
 .each-address div {

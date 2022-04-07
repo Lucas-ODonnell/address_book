@@ -61,21 +61,17 @@ body {
 }
 
 :root {
-	--backgroundColor: #30D5C8;
-	--buttonColor: #D5303D;
+	--backgroundColor: #1f1a24;
+	--mainBodyColor: #121212;
+	--buttonPrimary: #bb86fc;
+	--buttonSecondary: #03dac5;
 }
 
 input:focus {
 	outline: none;
 }
 
-.app h1 {
-	display: flex;
-	justify-content: center;
-	font-size: 2rem;
-	color: white;
-	margin: .5em .6em;
-	font-weight: bold;
+button {
+	cursor: pointer;
 }
-
 

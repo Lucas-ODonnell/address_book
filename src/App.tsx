@@ -5,7 +5,6 @@ import './App.css';
 const App: React.FC = () => {
 	return (
 		<div className="app">
-			<h1>Address Book</h1>
 			<Address />
 		</div>
 	)

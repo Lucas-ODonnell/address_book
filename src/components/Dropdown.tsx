@@ -33,10 +33,10 @@ const Dropdown: React.FC<Props> = ({setSortBy}) => {
 		<div className="dropdown-wrapper">
 			<div tabIndex={0}
 				className="dropdown-header"
-				onClick={()=> toggle()}
 			>
 				<div className="dropdown-header">
-					<p>Sort by </p>
+					<button onClick={()=> toggle()}
+>Sort by </button>
 				</div>
 			</div>
 			{open && (
