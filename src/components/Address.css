@@ -3,16 +3,16 @@
 	display: flex;
 	justify-content: center;
 	height: 90vh;
+	width: 100%;
 }
 
 .content {
 	padding: 3em 5em;
-	width: 95%;
+	width: 100%;
 	max-width: 70rem;
 	box-shadow: 0 2px 5px rgb(0,0,0);
 	border-radius: 4px;
 	background-color: white;
-	overflow: auto;
 }
 
 /* AddressForm */
@@ -85,6 +85,7 @@
 	background: transparent;
 	border: none;
 	border-bottom: 1px solid var(--backgroundColor);
+	color: var(--backgroundColor);
 	font-size: 2rem;
 }
 
@@ -119,8 +120,12 @@
 	margin-top: 1em;
 	display: grid;
 	justify-content: center;
-	grid-template-columns: repeat(auto-fit, 19rem);
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	grid-auto-flow: row;
 	gap: .1em;
+	overflow: scroll;
+	height: 50vh;
+	width: 100%;
 }
 
 .each-address {
@@ -128,7 +133,7 @@
 	flex-direction: column;
 	box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 	border-radius: 4px;
-	padding: 1em 2em;
+	padding: 2em 3em;
 	color: white;
 	background-color: var(--backgroundColor);
 }
@@ -141,8 +146,8 @@
 .header button {
 	margin-right: .4em;
 	cursor: pointer;
-	background-color: #660000;
-	border: 1px solid #660000;
+	background-color: var(--buttonColor);
+	border: 1px solid var(--buttonColor);
 	border-radius: 4px;
 	color: white;
 }
@@ -153,5 +158,9 @@
 
 .each-address div {
 	margin-bottom: .3em;
+}
+
+.each-address p {
+	word-break: break-word;
 }
 

@@ -1,6 +1,7 @@
 .dropdown-wrapper {
 	margin-right: 20em;
 	cursor: pointer;
+	margin-left: 1em;
 }
 
 .dropdown-header {
@@ -24,5 +25,5 @@
 }
 
 .list-item button:focus {
-	background-color: #660000;
+	background-color: var(--buttonColor);
 }

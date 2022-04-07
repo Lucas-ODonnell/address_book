@@ -63,7 +63,7 @@ const AddressIndex: React.FC<Props> = ({addresses, handleDelete, showForm, setSh
 				<div>
 					<p>{phone}</p>
 				</div>
-				{notes}
+				<p>{notes}</p>
 			</div>
 		)
 	})

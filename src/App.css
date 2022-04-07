@@ -50,14 +50,19 @@ table {
 *, *::before, *::after {
 	box-sizing: border-box;
 }
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+html {
+	font-family: 'Lato', sans-serif;
+}
 
 body {
-	background-color: rgba(0,0,0,0.7);
+	background-color: var(--backgroundColor);
 }
 
 :root {
-	--backgroundColor: rgba(0,0,0,0.7);
-	--buttonColor: #660000;
+	--backgroundColor: #30D5C8;
+	--buttonColor: #D5303D;
 }
 
 input:focus {

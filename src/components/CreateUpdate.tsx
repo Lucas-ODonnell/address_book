@@ -3,7 +3,7 @@ import { AddressInfo } from '../CustomTypes';
 
 interface Props {
 	setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
-	handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
+	handleChange: (e: React.FormEvent<HTMLInputElement>)=> void;
 	handleSubmit: (e: React.FormEvent) => void;
 	addressForm: AddressInfo;
 	buttonName: string;
