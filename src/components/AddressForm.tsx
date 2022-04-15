@@ -1,18 +1,14 @@
 import React from 'react';
-import { AddressInfo } from '../CustomTypes';
 import CreateUpdate from './CreateUpdate';
 
 interface Props {
-	handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
-	handleSubmit: (e: React.FormEvent)=> void;
-	addressForm: AddressInfo;
 	showForm: boolean;
 	setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
-	buttonName: string;
+	buttonName: string
 	setButtonName: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const AddressForm: React.FC<Props> = ({addressForm, handleChange, handleSubmit, showForm, setShowForm, buttonName, setButtonName}) => {
+const AddressForm: React.FC<Props> = ({showForm, setShowForm, buttonName, setButtonName}) => {
 	return (
 		<section>
 			<div className="new-address">
@@ -20,7 +16,7 @@ const AddressForm: React.FC<Props> = ({addressForm, handleChange, handleSubmit, 
 			</div>
 			{
 			showForm ? 
-			<CreateUpdate {...{addressForm, setShowForm, handleChange, handleSubmit, buttonName}}/>
+			<CreateUpdate {...{setShowForm, buttonName}}/>
 			:
 			<div></div>
 			}

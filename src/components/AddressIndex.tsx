@@ -1,30 +1,29 @@
-import React, { useState } from 'react';
-import { AddressInfo } from '../CustomTypes';
+import React, { useState, useContext } from 'react';
+import AddressContext from '../context/AddressContext';
 import CreateUpdate from './CreateUpdate';
 import Dropdown from './Dropdown';
 import Filter from './Filter';
 
 interface Props {
-	addresses: AddressInfo[];
-	handleDelete: (id: string) => void;
 	showForm: boolean;
 	setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
-	addressForm: AddressInfo;
-	handleChange: (e: React.FormEvent<HTMLInputElement>) => void;
-	handleSubmit: (e: React.FormEvent) => void;
-	setId: React.Dispatch<React.SetStateAction<string>>;
-	buttonName: string;
+	buttonName: string
 	setButtonName: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const AddressIndex: React.FC<Props> = ({addresses, handleDelete, showForm, setShowForm, addressForm, handleChange, handleSubmit, setId, buttonName, setButtonName}) => {
+const AddressIndex: React.FC<Props> = ({showForm, setShowForm, buttonName, setButtonName}) => {
+	const {addresses, setAddresses, id, setId} = useContext(AddressContext);
 	const [sortBy, setSortBy] = useState<string>("name");
 	const [filter, setFilter] = useState<string>("");
-
-	const handleFilterChange = (e: React.FormEvent<HTMLInputElement>) => {
+		const handleFilterChange = (e: React.FormEvent<HTMLInputElement>) => {
 		e.preventDefault();
 		setFilter(e.currentTarget.value);
 	}
+
+	const handleDelete = (id: string) => {
+		setAddresses(addresses.filter(item => item.id !== id));
+	}
+
 
 	const sortList = () => {
 		if (sortBy.toLowerCase() === "name") {
@@ -75,7 +74,7 @@ const AddressIndex: React.FC<Props> = ({addresses, handleDelete, showForm, setSh
 				{addressList}	
 			</div>
 			{showForm ?
-			<CreateUpdate {...{setShowForm, addressForm, handleChange, handleSubmit, buttonName}}/>
+			<CreateUpdate {...{setShowForm, buttonName, id, setId}}/>
 			:
 			<div>
 			</div>
