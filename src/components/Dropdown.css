@@ -16,23 +16,22 @@
 }
 
 .list {
-	position: absolute;
-	z-index: 99;
-	margin-top: -7em;
-	box-shadow: 0 2px 5px rgb(0,0,0);
+	margin-top: 1em;
 }
 
 .list-item button {
-	width: 100%;
-	border: none;
+	display: block;
 	font-size: 1.5rem;
-	color: white;
-	background-color: var(--buttonPrimary);
-	padding: .3em .8em;
-	border-radius: 4px;
+	background-color: transparent;
+	border: none;
+	padding: 0.5em 1em;
 }
 
 .list-item button:focus {
-	background-color: var(--buttonSecondary);
+	border: 1px solid white;
+	border-radius: 4px;
 }
 
+.list-title {
+	color: var(--buttonPrimary);
+}

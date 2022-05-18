@@ -65,6 +65,7 @@ body {
 	--mainBodyColor: #121212;
 	--buttonPrimary: #bb86fc;
 	--buttonSecondary: #03dac5;
+	--transition: all 0.3s linear;
 }
 
 input:focus {
@@ -77,6 +78,10 @@ button {
 
 span {
 	font-weight: bold;
-	color: red;
+	color: var(--buttonSecondary);
+	margin-top: 1em;
 }
 
+p {
+	font-size: 1.1rem;
+}
