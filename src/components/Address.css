@@ -184,3 +184,11 @@
 	word-break: break-word;
 }
 
+.address-info {
+	display: flex;
+	flex-direction: column;
+}
+
+.notes {
+	text-indent: 5%;
+}

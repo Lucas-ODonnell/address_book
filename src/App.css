@@ -75,3 +75,8 @@ button {
 	cursor: pointer;
 }
 
+span {
+	font-weight: bold;
+	color: red;
+}
+
